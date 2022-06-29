@@ -10,3 +10,9 @@
 - Built-in array methods: indexOf, includes, find, findIndex...
 - Check every single element
 - Time Complexity: O(n)
+
+## Binary Search
+- only works on sorted arrays
+- eliminates half of the remaining elements at a time
+- one of the divide and conquer patterns
+- Time Complexity: O(${log_2}{n}$)
