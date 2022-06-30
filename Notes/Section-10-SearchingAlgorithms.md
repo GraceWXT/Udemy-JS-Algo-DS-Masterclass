@@ -16,3 +16,7 @@
 - eliminates half of the remaining elements at a time
 - one of the divide and conquer patterns
 - Time Complexity: O(${log_2}{n}$)
+
+## Search for substrings in a larger string
+- Naive: Time O(n * m)
+- KMP: Time O(n+m)
