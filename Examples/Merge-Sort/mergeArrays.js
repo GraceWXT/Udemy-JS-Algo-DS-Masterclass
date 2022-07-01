@@ -1,4 +1,4 @@
-/** A function that takes two sorted arrays, and returned a new sorted array
+/** A function that takes two sorted arrays (ascending), and returned a new sorted array
  * with all elements in both arrays.
  * Both Time and Space: O(n+m) */
 
