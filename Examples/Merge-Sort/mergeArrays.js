@@ -2,7 +2,7 @@
  * with all elements in both arrays.
  * Both Time and Space: O(n+m) */
 
-function merge(arr1, arr2) {
+function mergeArrays(arr1, arr2) {
   // Initiate an empty array
   let result = [];
   // Compare the first number of both arrays
@@ -32,3 +32,5 @@ function merge(arr1, arr2) {
   // return sorted array
   return result;
 }
+
+export default mergeArrays;
