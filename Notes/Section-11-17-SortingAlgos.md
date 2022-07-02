@@ -16,7 +16,7 @@
 - Space: O(1)
 - Good at almost sorted data / continuously adding more data to a sorted dataset live
 
-# Faster Sorts
+# Faster Sorts (Intermediate)
 - A family of sorting algorithms that can improve time complexity from O($n^2$) to O($n{log_2}n$)
 
 ## Merge Sort
@@ -25,3 +25,12 @@
 - First implement a function for merging two sorted arrays: O(n+m) both time and space, return a new array (not modify the arrays passed in)
 - Time (same for best, average, worst): O($n{log_2}n$)
 - Space: O(n) - to store the split and merged arrays
+
+## Quick Sort
+- Call the pivot helper on the array to get a pivot index
+- Recursively call the pivot helper on the left & right sub-array
+- Base case: a __sub-array__ with 1 or 0 elements
+- Time:
+  - Best & Average - O($n{log_2}n$): ${log_2}n$ decompositions
+  - Worst O($n^2$): already sorted - n decompositions -> to get around it, pick a median number as start pivot
+- Space: - O(${log_2}n$)
