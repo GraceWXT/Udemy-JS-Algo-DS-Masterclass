@@ -20,3 +20,5 @@ function pivot(array, start = 0, end = array.length - 1) {
   swap(array, start, pivotIdx);
   return pivotIdx;
 }
+
+export default pivot;
