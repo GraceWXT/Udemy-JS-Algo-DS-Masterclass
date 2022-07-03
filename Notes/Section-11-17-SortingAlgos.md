@@ -34,3 +34,10 @@
   - Best & Average - O($n{log_2}n$): ${log_2}n$ decompositions
   - Worst O($n^2$): already sorted - n decompositions -> to get around it, pick a median number as start pivot
 - Space: - O(${log_2}n$)
+
+## Radix Sort
+- non-comparative sorting algorithm: never makes comparisons between elements
+- Exploits the fact that information about the size of a number is encoded in the number of digits
+- Only works with integers
+- Time: O(nk) where k is the maxDigits/word size
+- Space: O(n+k)
