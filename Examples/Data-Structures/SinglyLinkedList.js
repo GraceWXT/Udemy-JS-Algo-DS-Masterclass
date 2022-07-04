@@ -36,4 +36,22 @@ class SinglyLinkedList {
     return this;
   }
 
+  // Pop: remove the last node (tail) and return it (set the second last to be the new tail)
+  pop() {
+    if (this.length === 0) return undefined;
+    let current = this.head;
+    let newTail = current;
+    while(current.next) {
+      newTail = current;
+      current = current.next;
+    }
+    newTail.next = null;
+    this.tail = newTail;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+  }
 }
