@@ -1,0 +1,39 @@
+// Class: Node
+// a piece of data - val
+// reference to the next node - next
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+class SinglyLinkedList {
+  // SinglyLinkedList must have properties: head, tail and length
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  // Instance method: push => add value to the end of the list
+  // Create a new node with the value
+  // if the current head & tail is null, set the node to be both head and tail
+  // if there is head & tail, set the next property for current tail to be the new node
+  // then set the tail to be the new node
+  // increment the list length by one and return the list
+  push(val) {
+    const node = new Node(val);
+    if (!this.tail) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+    this.length++;
+    return this;
+  }
+
+}
