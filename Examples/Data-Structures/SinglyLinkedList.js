@@ -55,3 +55,13 @@ class SinglyLinkedList {
     return current;
   }
 }
+
+// const list = new SinglyLinkedList()
+// console.log(list);
+// console.log(list.push(1));
+// console.log(list.push(2));
+// console.log(list.push(3));
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list);
