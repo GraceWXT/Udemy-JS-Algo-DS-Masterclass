@@ -58,13 +58,26 @@ class SinglyLinkedList {
   shift() {
     if (this.length === 0) return undefined;
     let currentHead = this.head;
-    this.head = currentHead.next;
+    // this.head = currentHead.next; // Not needed - garbage collector will collect it
     this.length--;
     currentHead.next = null;
     if (this.length === 0) {
       this.tail = null;
     }
     return currentHead;
+  }
+
+  unshift(value) {
+    const newNode = new Node(value);
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
   }
 }
 
