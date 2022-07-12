@@ -80,14 +80,14 @@ class SinglyLinkedList {
     return this;
   }
 
-  // Get the value of the node for a certain index
+  // Get the node for a certain index
   get(index) {
     if (index < 0 || index > this.length) return null;
     let node = this.head;
     for (let i = 0; i < index; i++) {
       node = node.next;
     }
-    return node.val;
+    return node;
   }
 }
 
