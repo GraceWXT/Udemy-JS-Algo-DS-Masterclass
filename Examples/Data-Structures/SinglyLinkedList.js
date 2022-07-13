@@ -97,14 +97,31 @@ class SinglyLinkedList {
     foundNode.val = value;
     return true;
   }
+
+  // Insert a value to a certain index
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+
+    if (index === this.length) return this.push(value) && true; // or use !! coercion
+    if (index === 0) return this.unshift(value) && true;
+
+    const node = new Node(value);
+    const prev = this.get(index - 1);
+    const next = prev.next;
+    prev.next = node;
+    node.next = next;
+    this.length++;
+    return true;
+  }
 }
 
-// const list = new SinglyLinkedList()
-// console.log(list);
-// console.log(list.push(1));
-// console.log(list.push(2));
-// console.log(list.push(3));
+const list = new SinglyLinkedList()
+console.log(list);
+console.log(list.push(1));
+console.log(list.push(2));
+console.log(list.push(3));
 // console.log(list.pop());
 // console.log(list.pop());
 // console.log(list.pop());
-// console.log(list);
+console.log('insert', list.insert(3, 4))
+console.log(list);
