@@ -58,9 +58,9 @@ class SinglyLinkedList {
   shift() {
     if (this.length === 0) return undefined;
     let currentHead = this.head;
-    // this.head = currentHead.next; // Not needed - garbage collector will collect it
+    this.head = currentHead.next;
     this.length--;
-    currentHead.next = null;
+    // currentHead.next = null;  // Not needed - garbage collector will collect it?
     if (this.length === 0) {
       this.tail = null;
     }
@@ -112,6 +112,18 @@ class SinglyLinkedList {
     node.next = next;
     this.length++;
     return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index > this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    const prev = this.get(index - 1);
+    const node = prev.next;
+    prev.next = node.next;
+    this.length--;
+    return node;
   }
 }
 
