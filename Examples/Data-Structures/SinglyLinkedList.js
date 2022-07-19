@@ -136,15 +136,48 @@ class SinglyLinkedList {
     console.log(arr);
   }
 
+  reverse() {
+    let current = this.head;
+    // Swap the head and tail
+    this.head = this.tail;
+    this.tail = current;
+    // Variables to keep track of the node values
+    let next;
+    let prev = null; // Make sure the new tail has null as the next property
+    for (let i = 0; i < this.length; i++) {
+      // Keep track of the next value
+      next = current.next;
+      // Set the next property to point backward to prev
+      current.next = prev;
+      // Move forward to continue looping
+      prev = current;
+      current = next;
+    }
+    return this;
+  }
 }
 
 const list = new SinglyLinkedList()
-console.log(list);
-console.log(list.push(1));
-console.log(list.push(2));
-console.log(list.push(3));
+
+// Testing push, pop, insert
+// console.log(list);
+// console.log(list.push(1));
+// console.log(list.push(2));
+// console.log(list.push(3));
+// console.log(list.push(4));
+// console.log(list.push(5));
 // console.log(list.pop());
 // console.log(list.pop());
 // console.log(list.pop());
-console.log('insert', list.insert(3, 4))
-console.log(list);
+// console.log('insert', list.insert(3, 4))
+// console.log(list);
+
+// Testing reverse
+// list.push(1);
+// list.push(2);
+// list.push(3);
+// list.push(4);
+// list.push(5);
+// list.print();
+// list.reverse();
+// list.print();
