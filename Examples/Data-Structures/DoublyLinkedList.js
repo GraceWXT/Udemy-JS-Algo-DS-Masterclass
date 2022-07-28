@@ -48,4 +48,21 @@ class DoublyLinkedList {
     this.length--;
     return oldTail;
   }
+
+  shift() {
+    if (this.length === 0) return undefined;
+
+    const oldHead = this.head;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      const newHead = oldHead.next;
+      newHead.prev = null;
+      oldHead.next = null;
+      this.head = newHead;
+    }
+    this.length--;
+    return oldHead;
+  }
 }
