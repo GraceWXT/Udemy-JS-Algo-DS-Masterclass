@@ -27,4 +27,25 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  pop() {
+    if (this.length === 0) return undefined;
+
+    const oldTail = this.tail;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      const newTail = oldTail.prev;
+      oldTail.prev = null;
+      newTail.next = null;
+      this.tail = newTail;
+      // Without the newTail var in 3 lines:
+      // this.tail = oldTail.prev;
+      // this.tail.next = null;
+      // oldTail.prev = null;
+    }
+    this.length--;
+    return oldTail;
+  }
 }
